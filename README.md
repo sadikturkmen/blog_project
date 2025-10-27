@@ -77,6 +77,5 @@ project-root/
 
 ## Proje Sonu
 
-**Presentation Hazırla**:
 - Mimariyi açıkla
 - En çok zorlandığın kısımları paylaş
