@@ -1,0 +1,28 @@
+<div class="author">
+    <h1 class="author__heading"> Selam, Ben Sadik Turkmen.</h1>
+    <p class="author__body">Yazilim gelistirici falan filan.</p>
+</div>
+
+<img src="/img/kedi.jpeg" alt="kedi" class="hero-image" width="981" height="528" />
+
+<section class="articles">
+    <h2 class="articles__heading">Son Gonderi</h2>
+
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; Eski gonderiyi goster</a>
+    <% } %>
+    
+
+</section>
