@@ -2,6 +2,12 @@ require('dotenv').config();
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
+<<<<<<< Updated upstream
+const cookieParser = require('cookie-parser');
+const MongoStore = require('connect-mongo');
+const session = require('express-session');
+=======
+>>>>>>> Stashed changes
 
 const connectDB = require('./server/config/db.js');
 
@@ -14,6 +20,20 @@ connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+<<<<<<< Updated upstream
+app.use(cookieParser());
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    store : MongoStore.create({ 
+        mongoUrl: process.env.MONGODB_URI
+    }),
+    // cookie: { maxAge: new Date(Date.now() + (3600 * 1000))}
+}))
+=======
+>>>>>>> Stashed changes
 
 app.use(express.static('public'));
 
